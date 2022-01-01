@@ -2,28 +2,44 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
-const homeRoute = require('./routes/home');
+const routes = require('./routes/routes');
 const app = express();
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 8080;
+const passport = require('passport');
+const flash = require('connect-flash');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const db = require('./config/database.js');
 
 require('dotenv').config();
 
-app.use(cors());
 
+// express app configs
+app.use(cors());
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser);
+app.use(express.urlencoded({ extended: false }));
+
+// templating configs
 app.set('view engine', 'ejs');
 app.set('views', './src/pages');
-app.use(bodyParser.json());
-
-app.use(express.urlencoded({ extended: false }));
 app.use('/static', express.static(path.join(`${__dirname}/public`)));
 
-app.use('/', homeRoute);
+// passport configs
+app.use(session({ secret: 'nye2022'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
-const port = process.env.PORT || 8080;
-console.log(process.env)
+// route configs
+require('./routes/routes.js')(app, passport)
 
+// db connection
 mongoose
-	.connect(process.env.DB_HOST, {
+	.connect(db.url, {
 		useUnifiedTopology: true,
 		useNewUrlParser: true,
 	})
@@ -33,3 +49,4 @@ mongoose
 	.catch((err) => {
 		console.log(err);
 	});
+

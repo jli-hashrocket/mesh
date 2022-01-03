@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 // templating configs
 app.set('view engine', 'ejs');
 app.set('views', './src/pages');
-app.use('/static', express.static(path.join(`${__dirname}/public`)));
+app.use(express.static(__dirname + '/public'));
 
 // passport configs
 app.use(session({ secret: 'nye2022'}));

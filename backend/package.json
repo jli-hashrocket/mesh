@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "concurrently \"node app.js\" \"npx tailwindcss -i ./src/styles/style.css -o ./public/styles/main.css --watch\"",
     "dev": "nodemon app.js",
-    "servers": "concurrently \"npm run dev\" \"cd ../frontend && npm run start\""
+    "servers": "concurrently \"npm run dev\" \"cd ../frontend && npm run start\"",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
   "keywords": [],
   "author": "Jeff Li",

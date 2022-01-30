@@ -1,14 +1,66 @@
 <%- include('../layouts/header'); -%>
 <h1>Sign Up</h1>
 <form actions="/users/create">
-  <label for="firstName">First Name</label>
-  <input type="text" id="firstName" name="firstName" /><br/>
-  <label for="lastName">Last Name</label>
-  <input type="text" id="lastName" name="lastName" /><br/>
-  <label for="email">Email</label>
-  <input type="text" id="email" name="email" /><br/>
-  <label for="password">Password</label>
-  <input type="text" id="password" name="password" /><br/>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">First Name</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">Last Name</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">Email</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">Password</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">Confirm Password</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
+  <div class="mdc-text-field mdc-text-field--outlined form-field">
+    <input class="mdc-text-field__input" id="text-field-hero-input">
+    <div class="mdc-notched-outline">
+      <div class="mdc-notched-outline__leading"></div>
+      <div class="mdc-notched-outline__notch">
+        <label for="text-field-hero-input" class="mdc-floating-label">Company</label>
+      </div>
+      <div class="mdc-notched-outline__trailing"></div>
+    </div>
+  </div>
   <button type="submit">Submit</button>
 </form>
 <%- include('../layouts/footer'); -%>

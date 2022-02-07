@@ -1,6 +1,6 @@
 
 @use "@material/theme" with (
-  $primary: #349beb,
+  $primary: #266ea6,
   $on-primary: #fff
 );
 
@@ -17,10 +17,11 @@ $mesh-blue: #349beb;
 $mesh-dark-blue: #266ea6;
 $button-margin: 10px;
 $margin-bottom: 20px;
-
+$nav-container-height: 60px;
 
 body {
   color: #000;
+  margin: 0;
 
   a {
     text-decoration: none;
@@ -29,31 +30,54 @@ body {
     padding: 20px;
   }
 
-  .navbar {
-    display: flex;
-    margin: 20px 0;
-    padding: 0 20px;
-    justify-content: space-between;
-
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold
-    }
-    .buttons {
-      .button--raised {
-        margin: 0;
-        color: #fff;
-      }
-    }
-  }
+  
 
   .margin-right {
     margin-right: $button-margin;
   }
 
-  .form-field{
-    display: block;
-    margin-bottom: $margin-bottom;
-    width: 40%;
+  
+}
+
+.navbar {
+  padding: 0 20px;
+  background-color: $mesh-blue;
+  height: $nav-container-height;
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $nav-container-height;
   }
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    
+    justify-content: center;
+    max-width: 50%;
+  }
+  .buttons {
+    max-width: 50%;
+
+    .button--raised {
+      margin: 0;
+      color: #fff;
+    }
+  }
+}
+
+.signup__page {
+  display: block;
+  width: 30%;
+  margin: auto;
+}
+.signup__form {
+  
+}
+.form-field{
+  display: block;
+  margin-bottom: $margin-bottom;
+  width: 100%;
 }

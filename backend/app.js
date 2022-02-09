@@ -41,6 +41,6 @@ app.use(flash());
 // route configs
 
 require('./routes/index.js')(app);
-require('./routes/auth.js')(app, passport);
+require('./routes/auth.js')(app);
 app.listen(port);
 console.log('Started on port: ' + port)
